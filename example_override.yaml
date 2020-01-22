@@ -1,0 +1,31 @@
+# Example override values for flask-chart.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 3
+
+image:
+  repository: chrisjohnson00/my-awesome-app
+  pullPolicy: IfNotPresent
+
+nameOverride: "my-awesome-app"
+fullnameOverride: "my-awesome-app"
+
+ingress:
+  enabled: true
+  hosts:
+    - host: flaskapp.cluster.int
+      paths: ['/']
+  tls: []
+
+resources:
+  limits:
+    cpu: 100m
+    memory: 60Mi
+  requests:
+    cpu: 20m
+    memory: 30Mi
+
+configs:
+  HOST: 127.0.0.1
+  USER: myuser
