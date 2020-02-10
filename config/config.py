@@ -1,3 +1,3 @@
 {{- range $key, $value := .Values.configs }}
-{{ $key }} = {{ $value }}
+{{ $key }} = {{ $value | quote }}
 {{- end }}
