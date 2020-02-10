@@ -8,6 +8,8 @@ image:
   repository: chrisjohnson00/my-awesome-app
   pullPolicy: IfNotPresent
 
+appVersion: latest
+
 nameOverride: "my-awesome-app"
 fullnameOverride: "my-awesome-app"
 
