@@ -14,7 +14,6 @@ spec:
     metadata:
       annotations:
         checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
-        rollme: {{ .Values.rollme }} # since by default we're not changing anything on re-deploy of "latest", use this to force the rolling deploy
       labels:
         {{- include "flask-chart.selectorLabels" . | nindent 8 }}
     spec:
