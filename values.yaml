@@ -8,6 +8,10 @@ image:
   repository: myrepo/flaskapp
   pullPolicy: IfNotPresent
 
+containerPort: 5000
+liveness: "/"
+readiness: "/"
+
 imagePullSecrets: []
 nameOverride: "flaskapp"
 fullnameOverride: "flaskapp"

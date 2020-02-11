@@ -10,6 +10,9 @@ image:
 
 appVersion: latest
 
+liveness: "/"
+readiness: "/health"
+
 nameOverride: "my-awesome-app"
 fullnameOverride: "my-awesome-app"
 
