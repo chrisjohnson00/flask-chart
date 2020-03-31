@@ -47,10 +47,10 @@ spec:
           volumeMounts:
             - name: {{ $name }}-config
               mountPath: /usr/src/app/instance
-      {{- with .Values.env }}
+          {{- with .Values.env }}
           env:
             {{- toYaml . | nindent 12 }}
-      {{- end }}
+          {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
