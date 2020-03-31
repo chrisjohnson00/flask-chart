@@ -34,3 +34,7 @@ resources:
 configs:
   HOST: 127.0.0.1
   USER: myuser
+
+env:
+  - name: CONSUL_HTTP_ADDR
+    value: consul-consul-server.consul:8500
