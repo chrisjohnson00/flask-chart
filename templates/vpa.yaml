@@ -1,0 +1,14 @@
+{{- if .Values.vpa.enabled -}}
+{{- $name := include "flask-chart.name" . -}}
+apiVersion: "autoscaling.k8s.io/v1beta2"
+kind: VerticalPodAutoscaler
+metadata:
+  name: {{ include "flask-chart.fullname" . }}
+spec:
+  targetRef:
+    apiVersion: "apps/v1"
+    kind: Deployment
+    name: {{ include "flask-chart.fullname" . }}
+  updatePolicy:
+    updateMode: "{{ .Values.vpa.updateMode }}"      # only recommodation mode
+{{- end }}

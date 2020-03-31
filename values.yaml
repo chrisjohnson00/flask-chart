@@ -78,3 +78,9 @@ configs: {}
 #configs:
 #  HOST: 127.0.0.1
 #  USER: myuser
+
+vpa:
+  enabled: false
+  updateMode: "Off"
+
+env: {}
