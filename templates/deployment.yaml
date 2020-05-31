@@ -14,6 +14,7 @@ spec:
     metadata:
       annotations:
         checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
+        {{- toYaml .Values.deploymentTemplateAnnotations | nindent 8 }}
       labels:
         {{- include "flask-chart.selectorLabels" . | nindent 8 }}
     spec:
