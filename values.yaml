@@ -31,7 +31,7 @@ podSecurityContext: {}
   # fsGroup: 2000
 
 deploymentTemplateAnnotations: {}
-deploymentTemplateLabels: {}
+labels: {}
 
 securityContext: {}
   # capabilities:

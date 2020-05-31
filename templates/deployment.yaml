@@ -5,6 +5,9 @@ metadata:
   name: {{ include "flask-chart.fullname" . }}
   labels:
     {{- include "flask-chart.labels" . | nindent 4 }}
+    {{- if .Values.labels -}}
+    {{- toYaml .Values.labels | nindent 4 }}
+    {{- end }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
@@ -19,9 +22,10 @@ spec:
         {{- end }}
       labels:
         {{- include "flask-chart.selectorLabels" . | nindent 8 }}
-        {{- if .Values.deploymentTemplateLabels -}}
-        {{- toYaml .Values.deploymentTemplateLabels | nindent 8 }}
+        {{- if .Values.labels -}}
+        {{- toYaml .Values.labels | nindent 8 }}
         {{- end }}
+      name: {{ include "flask-chart.fullname" . }}
     spec:
     {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
