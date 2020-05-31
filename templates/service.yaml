@@ -5,7 +5,7 @@ metadata:
   labels:
     {{- include "flask-chart.labels" . | nindent 4 }}
 spec:
-  {{- if .Values.service.type }}
+  {{- if ne .Values.service.type nil }}
   type: {{ .Values.service.type }}
   {{- end }}
   ports:
