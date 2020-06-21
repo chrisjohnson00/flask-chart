@@ -1,6 +1,6 @@
 apiVersion: v2
 name: flask-chart
-description: A Helm chart for simple Flask apps running onKubernetes
+description: A Helm chart for simple Flask apps running on Kubernetes
 
 # A chart can be either an 'application' or a 'library' chart.
 #
