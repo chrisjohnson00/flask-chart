@@ -4,6 +4,7 @@ metadata:
   name: {{ include "flask-chart.fullname" . }}
   labels:
     {{- include "flask-chart.labels" . | nindent 4 }}
+    app: {{ include "flask-chart.fullname" . }}
 spec:
   type: {{ .Values.service.type }}
   ports:
@@ -13,3 +14,4 @@ spec:
       name: http
   selector:
     {{- include "flask-chart.selectorLabels" . | nindent 4 }}
+    app: {{ include "flask-chart.fullname" . }}

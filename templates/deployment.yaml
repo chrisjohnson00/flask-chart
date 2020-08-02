@@ -9,6 +9,7 @@ metadata:
     {{- toYaml .Values.labels | nindent 4 }}
     {{- end }}
     version: {{ .Values.appVersion }}
+    app: {{ include "flask-chart.fullname" . }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
@@ -17,6 +18,7 @@ spec:
       {{- if .Values.labels -}}
       {{- toYaml .Values.labels | nindent 6 }}
       {{- end }}
+      app: {{ include "flask-chart.fullname" . }}
   template:
     metadata:
       annotations:
@@ -30,6 +32,7 @@ spec:
         {{- toYaml .Values.labels | nindent 8 }}
         {{- end }}
         version: {{ .Values.appVersion }}
+        app: {{ include "flask-chart.fullname" . }}
       name: {{ include "flask-chart.fullname" . }}
     spec:
     {{- with .Values.imagePullSecrets }}
